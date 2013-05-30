@@ -1,0 +1,15 @@
+
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+RewriteBase /
+RewriteCond $1 !^(index\.php|storage|robots\.txt|phpMyAdmin|pars|assets|css|themes|favicon\.ico|ru2)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+RewriteCond %{HTTP_HOST} !^raybanco\.com.ua [NC]
+RewriteRule ^(.*)  http://raybanco.com.ua/$1 [L,R=301]
+RedirectMatch 301 (.*)\.htm$ http://raybanco.com.ua/$1.html
+</IfModule>

@@ -1,0 +1,1 @@
+<a title="<?php echo $product->name; ?>" href="<?php echo $data->getImageUrl('verylarge'); ?>"><img style="max-width: 355px;max-height: 235px;" src="<?php echo $data->getImageUrl('large'); ?>" /></a>
